@@ -1,0 +1,19 @@
+.slides-controll {
+    position: absolute;
+    bottom: 5rem;
+}
+
+.slides-controll__prev,
+.slides-controll__next {
+    width: 5em;
+    height: 3em;
+    border: none;
+    &:focus {
+        outline: none;
+    }
+}
+
+.button--disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

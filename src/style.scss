@@ -1,0 +1,12 @@
+$color-green: #005659;
+$color-black: #323232;
+$color-white: white;
+body {
+    background-color: $color-green;
+    color: $color-white;
+    font-family: 'Neutra Text';
+}
+
+@import 'styles/_reset.scss';
+@import 'styles/_slides.scss';
+@import 'styles/_slidescontroll.scss';

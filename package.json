@@ -5,5 +5,25 @@
   "main": "index.js",
   "repository": "git@github.com:lukasholzer/diploma-thesis-presentation.git",
   "author": "Lukas Holzer <office@lukasholzer.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "start": "webpack-dev-server --inline --hot",
+    "build": "webpack -p"
+  },
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-preset-es2015": "^6.24.1",
+    "browser-sync": "^2.18.8",
+    "browser-sync-webpack-plugin": "^1.1.4",
+    "css-loader": "^0.28.0",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "file-loader": "^0.11.1",
+    "node-sass": "^4.5.2",
+    "sass-loader": "^6.0.3",
+    "style-loader": "^0.16.1",
+    "url-loader": "^0.5.8",
+    "webpack": "^2.4.1",
+    "webpack-dev-server": "^2.4.4"
+  }
 }
