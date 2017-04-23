@@ -1,0 +1,9 @@
+{
+  "name": "presentation-diploma-thesis",
+  "version": "1.0.0",
+  "description": "Presentation slides for my Diploma Thesis about the Altwiener Christkindlmarkt",
+  "main": "index.js",
+  "repository": "git@github.com:lukasholzer/diploma-thesis-presentation.git",
+  "author": "Lukas Holzer <office@lukasholzer.com>",
+  "license": "MIT"
+}
