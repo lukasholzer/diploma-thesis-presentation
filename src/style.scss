@@ -1,12 +1,32 @@
 $color-green: #005659;
 $color-black: #323232;
 $color-white: white;
+html,
 body {
     background-color: $color-green;
+}
+
+body {
+    font-size: 20px;
     color: $color-white;
-    font-family: 'Neutra Text';
+    font-family: 'Neutra Text'; // position: absolute;
+    // top: 0;
+    // left: 0;
+    width: 100vw;
+    height: 100vh;
 }
 
 @import 'styles/_reset.scss';
 @import 'styles/_slides.scss';
 @import 'styles/_slidescontroll.scss';
+
+h1 {
+    text-align: center;
+    font-size: 3.5rem;
+}
+
+.h--centered {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}

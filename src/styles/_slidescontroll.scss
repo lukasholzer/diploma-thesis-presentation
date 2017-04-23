@@ -5,15 +5,22 @@
 
 .slides-controll__prev,
 .slides-controll__next {
-    width: 5em;
-    height: 3em;
+    width: 50vw;
+    height: 100vw;
+    position: fixed;
+    top: 0;
     border: none;
     &:focus {
         outline: none;
     }
+    background-color: transparent;
 }
 
+.slides-controll__prev { left: 0; }
+
+.slides-controll__next {  right: 0; }
+
 .button--disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
+    opacity: 0.5;
+    cursor: not-allowed;
 }

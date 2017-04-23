@@ -15,6 +15,19 @@ let current = slides.length-1;
 const next = document.querySelector('.slides-controll__next');
 const prev = document.querySelector('.slides-controll__prev');
 
+document.onkeydown = keyCheck;
+function keyCheck(e) {
+
+  fullScreen();
+
+  switch (e.keyCode) {
+    case 37: prevSlide(); break; // left
+    case 38: prevSlide(); break; // up
+    case 39: nextSlide(); break; // right
+    case 40: nextSlide(); break; // down
+  }
+}
+
 // Event Listeners
 next.addEventListener('click', (e) => {
   nextSlide();
@@ -27,6 +40,18 @@ prev.addEventListener('click', (e) => {
 
 
 // Functions
+
+function fullScreen() {
+  const element = document.body; //document.querySelector('.slides');
+
+  if (element.requestFullScreen) {
+    element.requestFullScreen();
+  } else if (element.mozRequestFullScreen) {
+    element.mozRequestFullScreen();
+  } else if (element.webkitRequestFullScreen) {
+    element.webkitRequestFullScreen();
+  }
+}
 function nextSlide() {
   if (!_next) {
     return;
