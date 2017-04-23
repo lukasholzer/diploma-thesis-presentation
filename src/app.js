@@ -10,21 +10,19 @@ const slides = document.querySelectorAll('.slide');
 
 let _next = true;
 let _prev = false;
-let current = slides.length-1;
+let current = 0;
 
 const next = document.querySelector('.slides-controll__next');
 const prev = document.querySelector('.slides-controll__prev');
 
 document.onkeydown = keyCheck;
 function keyCheck(e) {
-
-  fullScreen();
-
   switch (e.keyCode) {
     case 37: prevSlide(); break; // left
     case 38: prevSlide(); break; // up
     case 39: nextSlide(); break; // right
     case 40: nextSlide(); break; // down
+    case 76: fullScreen(); break; // key L for large
   }
 }
 
@@ -57,19 +55,19 @@ function nextSlide() {
     return;
   }
 
-  current--;
+  current++;
 
   slides[current].classList.add(_ACTIVE_CLASS);
   slides[current].classList.add('slide--right');
-  slides[current + 1].classList.remove(_ACTIVE_CLASS);
-  slides[current + 1].classList.remove('slide--right', 'slide--left');
+  slides[current - 1].classList.remove(_ACTIVE_CLASS);
+  slides[current - 1].classList.remove('slide--right', 'slide--left');
 
 
-  if (current < slides.length && !_prev) {
+  if (current > 0 && !_prev) {
     toggle_prev();
   }
 
-  if (current == 0) {
+  if (current == slides.length-1) {
     toggle_next();
   }
 
@@ -80,15 +78,15 @@ function prevSlide() {
     return;
   }
 
-  current++;
+  current--;
 
   slides[current].classList.add(_ACTIVE_CLASS);
   slides[current].classList.add('slide--left');
-  slides[current - 1].classList.remove(_ACTIVE_CLASS);
-  slides[current - 1].classList.remove('slide--right', 'slide--left');
+  slides[current + 1].classList.remove(_ACTIVE_CLASS);
+  slides[current + 1].classList.remove('slide--right', 'slide--left');
 
 
-  if (current == slides.length - 1) {
+  if (current == 0) {
     toggle_prev();
   }
 

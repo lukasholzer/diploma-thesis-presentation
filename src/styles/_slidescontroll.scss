@@ -5,7 +5,7 @@
 
 .slides-controll__prev,
 .slides-controll__next {
-    width: 50vw;
+    width: 10vw;
     height: 100vw;
     position: fixed;
     top: 0;
@@ -13,6 +13,8 @@
     &:focus {
         outline: none;
     }
+    opacity: 0.5;
+    cursor: pointer;
     background-color: transparent;
 }
 
@@ -21,6 +23,6 @@
 .slides-controll__next {  right: 0; }
 
 .button--disabled {
-    opacity: 0.5;
+    opacity: 0.2;
     cursor: not-allowed;
 }
