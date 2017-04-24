@@ -66,7 +66,7 @@ const config = {
     plugins: [
       new webpack.NamedModulesPlugin(),
       new CopyWebpackPlugin([
-        { from: 'images/', to: 'images' }
+        { from: 'images/', to: 'images' },
       ]),
       extractCommons,
       extractCSS,
