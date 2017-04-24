@@ -1,0 +1,81 @@
+.screen {
+    position: absolute;
+    background-position: center center;
+    background-size: cover;
+    background-color: $color-green;
+    width: 120px;
+    height: 250px;
+    overflow: hidden;
+    transform: rotate(-37.73deg) scaleX(0.8312) scaleY(0.8010) skewX(10.92deg) skewY(1deg) translate(90px, 120px);
+    cursor: pointer;
+    border-radius: 2px;
+    @media screen and (min-width: 768px) {
+        width: 300px;
+        height: 570px;
+        transform: rotate(-37.73deg) scaleX(0.8312) scaleY(0.8010) skewX(10.92deg) skewY(1deg) translate(205px, 263px);
+    }
+    animation-duration: 0.8s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
+    box-shadow: -10px 10px 50px 5px rgba(0,
+    0,
+    0,
+    0.5);
+    transition: all 300ms ease-out;
+    &:nth-child(2) {
+        z-index: 1;
+        .slide--active & {
+            animation-name: slidescreen_2;
+        }
+    }
+    &:nth-child(3) {
+        z-index: 2;
+        .slide--active & {
+            animation-name: slidescreen_1;
+        }
+        .mockup--large & {
+            top: 50%;
+            left: 50%;
+            transform: rotate(0deg);
+            margin-top: 10%;
+            margin-left: 10%;
+        }
+    }
+}
+
+.mockup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    @media screen and (min-width: 768px) {
+        width:900px;
+    }
+    img {
+        width: 100%;
+    }
+}
+
+@keyframes slidescreen_1 {
+    from {
+        top: 0;
+        left: 0;
+    }
+    to {
+        top: -3em;
+        left: 10em;
+    }
+}
+
+@keyframes slidescreen_2 {
+    from {
+        top: 0;
+        left: 0;
+    }
+    to {
+        top: -1.5em;
+        left: 5em;
+    }
+}

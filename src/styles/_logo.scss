@@ -1,0 +1,23 @@
+.logo {
+    width: 10rem;
+    margin-bottom: 3em;
+    svg {
+        width: 100%;
+    }
+}
+
+.svg--gold {
+    fill: $color_gold;
+}
+
+.svg--white {
+    transition: fill 250ms ease-out;
+    fill: $color_white;
+    .logo--white &,
+    .header--open & {
+        fill: $color_white !important;
+    }
+    .header--fullwidth & {
+        fill: $color_black;
+    }
+}

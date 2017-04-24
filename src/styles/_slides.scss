@@ -7,6 +7,7 @@ $space: 4rem;
     background-color: $color-white;
     color: $color-black;
     will-change: transform;
+    pointer-events: none;
     &:nth-child(1) {
         background-color: $color-green;
         color: $color-white;
@@ -19,9 +20,15 @@ $space: 4rem;
     padding: $space;
 }
 
+.slide--green {
+  background-color: $color-green;
+  color: $color-white;
+}
+
 .slide--active {
     opacity: 1;
     animation-duration: 0.8s;
+    pointer-events: all;
 }
 
 .slide--left {

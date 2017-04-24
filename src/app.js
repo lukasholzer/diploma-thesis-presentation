@@ -14,6 +14,7 @@ let current = 0;
 
 const next = document.querySelector('.slides-controll__next');
 const prev = document.querySelector('.slides-controll__prev');
+const mockup = document.querySelector('.mockup');
 
 document.onkeydown = keyCheck;
 function keyCheck(e) {
@@ -25,6 +26,10 @@ function keyCheck(e) {
     case 76: fullScreen(); break; // key L for large
   }
 }
+
+mockup.addEventListener('click', function (e) {
+  this.classList.toggle('mockup--large');
+})
 
 // Event Listeners
 next.addEventListener('click', (e) => {

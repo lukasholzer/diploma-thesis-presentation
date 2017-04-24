@@ -1,6 +1,7 @@
 $color-green: #005659;
 $color-black: #323232;
 $color-white: white;
+$color_gold: rgba(194, 170, 133, 1.0);
 html,
 body {
     background-color: $color-green;
@@ -17,7 +18,10 @@ body {
 }
 
 @import 'styles/_reset.scss';
+@import 'styles/_logo.scss';
+@import 'styles/_list.scss';
 @import 'styles/_slides.scss';
+@import 'styles/_mockup.scss';
 @import 'styles/_slidescontroll.scss';
 h1 {
     font-size: 3.5rem;
@@ -31,10 +35,13 @@ h1 {
 }
 
 .text--centered {
+    display: flex;
+    align-items: center;
+    flex-flow: column;
     text-align: center;
 }
 
 iframe {
-  width: 100%;
-  height: 100%;
+    width: 100%;
+    height: 100%;
 }

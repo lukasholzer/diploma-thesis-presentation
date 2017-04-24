@@ -1,6 +1,7 @@
 const webpack = require('webpack')
 const path = require('path')
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const extractCommons = new webpack.optimize.CommonsChunkPlugin({
     name: 'commons',
@@ -21,18 +22,39 @@ const config = {
         filename: '[name].bundle.js'
     },
     module: {
-        rules: [{
-            test: /\.(png|jpg)$/,
-            include: path.resolve(__dirname, 'src'),
-            use: [{
-                loader: 'url-loader',
-                options: { limit: 10000 } // Convert images < 10k to base64 strings
-            }]
-        }, {
+      rules: [
+        // {
+        //     test: /\.(png|jpg)$/,
+        //     include: path.resolve(__dirname, 'src'),
+        //     use: [{
+        //         loader: 'url-loader',
+        //         options: { limit: 10000 } // Convert images < 10k to base64 strings
+        //     }]
+        // },
+        {
+          test: /\.(gif|png|jpe?g|svg)$/i,
+          loaders: [
+            'file-loader',
+            {
+              loader: 'image-webpack-loader',
+              query: {
+                progressive: true,
+                optimizationLevel: 7,
+                interlaced: false,
+                pngquant: {
+                  quality: '65-90',
+                  speed: 4
+                }
+              }
+            }
+          ]
+        },
+        {
             test: /\.scss$/,
             include: path.resolve(__dirname, 'src'),
             loader: extractCSS.extract(['css-loader', 'sass-loader'])
-        }, {
+        },
+        {
             test: /\.js$/,
             include: path.resolve(__dirname, 'src'),
             use: [{
@@ -43,6 +65,9 @@ const config = {
     },
     plugins: [
       new webpack.NamedModulesPlugin(),
+      new CopyWebpackPlugin([
+        { from: 'images/', to: 'images' }
+      ]),
       extractCommons,
       extractCSS,
       new BrowserSyncPlugin({
@@ -51,7 +76,7 @@ const config = {
         host: 'localhost',
         port: 3000,
         files: ['*.html'],
-        proxy: 'http://localhost:8081/'
+        proxy: 'http://localhost:8080/'
       })
     ]
 }
