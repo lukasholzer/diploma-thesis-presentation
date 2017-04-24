@@ -1,0 +1,18 @@
+.animation--slideUp {
+    opacity: 0;
+    will-change: transform;
+    .slide--active & {
+        animation: slide_up_in 700ms ease-out 1s 1 normal forwards;
+    }
+}
+
+@keyframes slide_up_in {
+    from {
+        opacity: 0;
+        transform: translateY(100vh);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

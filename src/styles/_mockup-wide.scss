@@ -1,0 +1,20 @@
+.mockupWide {
+    position: relative;
+    max-width: 1145px;
+}
+
+.mockupWide__img {
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.mockupWide__screen {
+    position: absolute;
+    top: 13.7%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 36%);
+    height: calc(100% - 34%);
+}
