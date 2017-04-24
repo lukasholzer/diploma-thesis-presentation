@@ -15,9 +15,8 @@ before_install:
   - npm install -g yarn --cache-min 999999999
 install:
   - yarn
-  - yarn run build
 script:
-  - gulp build
+  - yarn run build
 after_success:
   - if [[ "$TRAVIS_BRANCH" == "master" ]]; then sshpass -e rsync -r --delete-after ./dist travis@138.68.67.135:/var/www/presentation.altwiener-markt.at/html/; fi
   - if [[ "$TRAVIS_BRANCH" == "master" ]]; then sshpass -e rsync -r --delete-after ./index.html travis@138.68.67.135:/var/www/presentation.altwiener-markt.at/html/; fi
